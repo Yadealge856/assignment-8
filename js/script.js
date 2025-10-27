@@ -1,37 +1,65 @@
+// Total points for the quiz
 let totalPoints = 0;
 
-// Add event listeners to all answer buttons
-const buttons = document.querySelectorAll(".answer-btn");
-buttons.forEach(button => {
-  button.addEventListener("click", function() {
-    const points = parseInt(this.dataset.points);
-    totalPoints += points;
+// Object to store user selections
+const userAnswers = {};
 
-    // Disable other buttons in same question block
-    const parent = this.closest(".question-block");
-    parent.querySelectorAll(".answer-btn").forEach(btn => {
-      btn.disabled = true;
-      btn.classList.add("btn-secondary");
-      btn.classList.remove("btn-outline-primary");
+// Select all question blocks
+const questionBlocks = document.querySelectorAll('.question-block');
+
+questionBlocks.forEach((block, index) => {
+  const buttons = block.querySelectorAll('.answer-btn');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', function () {
+      // Remove 'selected' class from all buttons in this block
+      buttons.forEach(btn => btn.classList.remove('selected'));
+
+      // Add 'selected' class to the clicked button
+      this.classList.add('selected');
+
+      // Store the answer in userAnswers
+      const questionId = `question-${index + 1}`;
+      const answerValue = this.dataset.answer;
+      userAnswers[questionId] = answerValue;
+
+      // Update total points dynamically
+      const points = parseInt(this.dataset.points);
+      const previousPoints = block.dataset.previousPoints
+        ? parseInt(block.dataset.previousPoints)
+        : 0;
+      totalPoints = totalPoints - previousPoints + points;
+      block.dataset.previousPoints = points;
+
+      console.log(`Selected ${answerValue} for ${questionId}`);
+      console.log('User answers:', userAnswers);
+      console.log('Total points:', totalPoints);
     });
-
-    this.classList.add("btn-primary");
   });
 });
 
-document.getElementById("show-result").addEventListener("click", function() {
-  let resultText = "";
-  
-  // Simple point system
-  // 5 questions × max 3 points = 15 possible points
+// Function to calculate and display the final result
+function displayResult() {
+  let resultText = '';
+
+  // Determine result based on totalPoints
   if (totalPoints <= 6) {
-    resultText = "🏙️ You belong in **New York City** – energetic, ambitious, and always on the move!";
+    resultText =
+      "You belong in <b>New York City</b> - energetic, ambitious, and always on the move!";
   } else if (totalPoints <= 10) {
-    resultText = "🎨 You should live in **Paris** – artistic, cultured, and full of charm.";
+    resultText =
+      "You should live in <b>Paris</b> - artistic, cultured, and full of charm.";
   } else {
-    resultText = "🌴 You’re made for **Los Angeles** – relaxed, creative, and sun-loving!";
+    resultText =
+      "You’re made for <b>Los Angeles</b> - relaxed, creative, and sun-loving!";
   }
 
-  document.getElementById("result-text").innerHTML = resultText;
-  document.getElementById("result-container").style.display = "block";
-});
+  // Display result
+  const resultContainer = document.getElementById('result-container');
+  const resultTextElem = document.getElementById('result-text');
+  resultTextElem.innerHTML = resultText;
+  resultContainer.style.display = 'block';
+}
+
+// Connect the "Show Results" button to the displayResult function
+document.getElementById('show-result').addEventListener('click', displayResult);
