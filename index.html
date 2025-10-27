@@ -1,58 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Personality Quiz</title>
-    <link rel="icon" type="image/x-icon" href="/img/ideas.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href ="./css/style.css">
-</head>
-<body>
-    <h1 class="text-center mt-4">YOUR QUIZ TITLE HERE</h1>
-    
-    <!-- Start quiz element -->
-    <div class="container d-flex justify-content-center" id="question-1">
-      <div class="card my-4 p-4 question-block" style="width: 75%;">
-        <h4 class="mb-3">YOUR QUIZ QUESTION HERE</h4>
-        <div class="row g-2">
-          <div class="col-6">
-            <button class="btn btn-outline-primary w-100 answer-btn" data-answer="A">ANSWER CHOICE A</button>
-          </div>
-          <div class="col-6">
-            <button class="btn btn-outline-primary w-100 answer-btn" data-answer="B">ANSWER CHOICE B</button>
-          </div>
-          <div class="col-6">
-            <button class="btn btn-outline-primary w-100 answer-btn" data-answer="C">ANSWER CHOICE C</button>
-          </div>
-          <div class="col-6">
-            <button class="btn btn-outline-primary w-100 answer-btn" data-answer="D">ANSWER CHOICE D</button>
-          </div>
-        </div>
+<h1 class="text-center mt-4">What City Should You Actually Live In?</h1>
+
+<!-- Start quiz element -->
+<div class="container d-flex justify-content-center" id="question-1">
+  <div class="card my-4 p-4 question-block" style="width: 75%;">
+    <h4 class="mb-3">1. What kind of pace do you prefer in life?</h4>
+    <div class="row g-2">
+      <div class="col-6">
+        <button class="btn btn-outline-primary w-100 answer-btn" data-points="1">Fast and exciting – I thrive on energy!</button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-outline-primary w-100 answer-btn" data-points="2">Balanced – I like a mix of busy and calm.</button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-outline-primary w-100 answer-btn" data-points="3">Chill and relaxed – no rush at all.</button>
       </div>
     </div>
+  </div>
+</div>
+<!-- End quiz element -->
 
-    
-    
-    <!-- End quiz element -->
-
-    <!-- Add more quiz elements here -->
-
-
-
-    <div class="container d-flex justify-content-center">
-      <button id="show-result" class="btn btn-success my-4">Show Results</button>
-    </div>    
-    <!-- Output the result here -->
-    <div class="container d-flex justify-content-center">
-      <div id="result-container" class="card p-4 mb-4" style="width: 75%; display: none;">
-        <h3>Your Result:</h3>
-        <p id="result-text"></p>
+<!-- Start quiz element -->
+<div class="container d-flex justify-content-center" id="question-2">
+  <div class="card my-4 p-4 question-block" style="width: 75%;">
+    <h4 class="mb-3">2. What kind of weather do you enjoy most?</h4>
+    <div class="row g-2">
+      <div class="col-6">
+        <button class="btn btn-outline-primary w-100 answer-btn" data-points="3">Sunny and warm all year!</button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-outline-primary w-100 answer-btn" data-points="2">Cool with a mix of seasons.</button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-outline-primary w-100 answer-btn" data-points="1">I love the hustle and bustle, rain or shine.</button>
       </div>
     </div>
-    
-    <!-- Connect to your script file here -->
-     <script src = "./js/script.js"></script>
-</body>
-</html>
-<script src="./js/script.js"></script>
+  </div>
+</div>
+<!-- End quiz element -->
+
+<!-- Start quiz element -->
+<div class="container d-flex justify-content-center" id="question-3">
+  <div class="card my-4 p-4 question-block" style="width: 75%;">
+    <h4 class="mb-3">3. How do you like to spend your weekends?</h4>
+    <div class="row g-2">
+      <div class="col-6">
+        <button class="btn btn-outline-primary w-100 answer-btn" data-points="1">Exploring restaurants or nightlife.</button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-outline-primary w-100 answer-btn" data-points="2">Visiting museums or local parks.</button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-outline-primary w-100 answer-btn" data-points="3">Relaxing outdoors or near the water.</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End quiz element -->
+
+<!-- Start quiz element -->
+<div class="container d-flex justify-content-center" id="question-4">
+  <div class="card my-4 p-4 question-block" style="width: 75%;">
+    <h4 class="mb-3">4. What kind of food best matches your taste?</h4>
+    <div class="row g-2">
+      <div class="col-6">
+        <button class="btn btn-outline-primary w-100 answer-btn" data-points="1">Trendy fusion or street food.</button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-outline-primary w-100 answer-btn" data-points="2">Classic comfort food and international dishes.</button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-outline-primary w-100 answer-btn" data-points="3">Fresh seafood or farm-to-table meals.</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End quiz element -->
+
+<!-- Start quiz element -->
+<div class="container d-flex justify-content-center" id="question-5">
+  <div class="card my-4 p-4 question-block" style="width: 75%;">
+    <h4 class="mb-3">5. What environment inspires you most?</h4>
+    <div class="row g-2">
+      <div class="col-6">
+        <button class="btn btn-outline-primary w-100 answer-btn" data-points="1">Skyscrapers and buzzing streets.</button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-outline-primary w-100 answer-btn" data-points="2">Cultural landmarks and cozy cafés.</button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-outline-primary w-100 answer-btn" data-points="3">Beaches, sunsets, and laid-back vibes.</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End quiz element -->
