@@ -18,7 +18,7 @@ questionBlocks.forEach((block, index) => {
       // Add 'selected' class to the clicked button
       this.classList.add('selected');
 
-      // Store the answer in userAnswers
+      // Have the answer in userAnswers
       const questionId = `question-${index + 1}`;
       const answerValue = this.dataset.answer;
       userAnswers[questionId] = answerValue;
@@ -38,7 +38,7 @@ questionBlocks.forEach((block, index) => {
   });
 });
 
-// Function to calculate and display the final result
+// Calculate and have the final result
 function displayResult() {
   let resultText = '';
 
